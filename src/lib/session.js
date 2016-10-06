@@ -67,7 +67,7 @@ class BetfairSession {
     constructor(applicationKey, options={}) {
         this.sessionKey = null;
         this.applicationKey = applicationKey;
-        BetfairInvocation.setApplicationKey(applicationKey);
+        // BetfairInvocation.setApplicationKey(applicationKey);
 
         this.createApiMethods('betting', API_BETTING_METHODS);
         this.createApiMethods('accounts', API_ACCOUNT_METHODS);
@@ -157,7 +157,7 @@ class BetfairSession {
             if (!_.isObject(params)) {
                 throw('params should be object');
             }
-            let invocation = new BetfairInvocation(api, this.sessionKey, methodName, params);
+            let invocation = new BetfairInvocation(api, this.applicationKey, this.sessionKey, methodName, params);
             invocation.execute((err, result) => {
                 //console.log(methodName, 'error', err, 'result', result);
                 if (err) {

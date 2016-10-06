@@ -49,7 +49,7 @@ class BetfairInvocation {
         BetfairInvocation.emulator = emulator;
     }
 
-    constructor(api, sessionKey, method, params = {}, isEmulated = false) {
+    constructor(api, applicationKey, sessionKey, method, params = {}, isEmulated = false) {
         if (api !== "accounts" && api !== "betting" && api != "heartbeat" && api != "scores") {
             throw new Error('Bad api parameter:' + api);
         }
@@ -64,7 +64,7 @@ class BetfairInvocation {
 
         // Request and Response stuff
         this.apiEndpoint = BETFAIR_API_ENDPOINTS[api] || BETFAIR_API_ENDPOINTS.betting;
-        this.applicationKey = BetfairInvocation.applicationKey;
+        this.applicationKey = applicationKey;
         this.service = this.apiEndpoint.service;
         this.request = {
             "jsonrpc": "2.0",

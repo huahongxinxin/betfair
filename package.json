@@ -1,6 +1,6 @@
 {
-  "name": "betfair",
-  "version": "0.7.8",
+  "name": "betfair-cube-sdk",
+  "version": "0.0.1",
   "description": "Betfair JSON API",
   "main": "index.js",
   "private": false,
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/AlgoTrader/betfair.git"
+    "url": "git@github.com:huahongxinxin/betfair.git"
   },
   "keywords": [
     "betfair",
